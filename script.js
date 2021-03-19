@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
             <h3>${astronaut.firstName} ${astronaut.lastName}</h3>
             <ul>
                 <li>Hours in space: ${astronaut.hoursInSpace} </li>
-                <li>Active: ${astronaut.active}</li>
+                <li class = "active">Active: ${astronaut.active}</li>
                 <li>Skills: ${astronaut.skills.join(", ")}</li>
             </ul>
          </div>
@@ -23,6 +23,14 @@ window.addEventListener('load', function() {
       </div>
       `
      }
-     container.innerHTML = astronauts
-    })
-})
+     container.innerHTML = astronauts;
+
+    let a = document.getElementsByClassName('active');
+    for (x in a){
+      if (a[x].innerText.includes('true')){
+        a[x].style.color = "green";
+      }
+    }
+
+    });
+});
